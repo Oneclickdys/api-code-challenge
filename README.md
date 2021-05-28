@@ -1,7 +1,7 @@
 # Api code challenge
 
-## Code challenge
-Create crud of education years according to the data model ./api/_sql/der.mwb
+## Code challenge goal
+Create CRUD of "education years" according to the data model ./api/_sql/der.mwb like "education levels" CRUD.
 
 ## Install dev localhost
 ### Install modules
