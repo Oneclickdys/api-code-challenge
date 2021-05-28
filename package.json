@@ -9,7 +9,6 @@
   "main": "app.js",
   "dependencies": {
     "@chezearth/swagger": "^0.7.6",
-    "asyncawait": "^1.0.8",
     "bcrypt": "^3.0.6",
     "cookie-parser": "^1.4.4",
     "cors": "^2.8.5",
