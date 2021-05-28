@@ -1,0 +1,10 @@
+type: "object"
+required:
+- "guid"
+properties:
+  guid:
+    type: "array"
+    description: Array of guid's
+    items:
+      type: "string"
+      description: "Guid"

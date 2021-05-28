@@ -1,0 +1,46 @@
+swagger: "2.0"
+info:
+  description: "API Documentation"
+  title: "API"
+  version: "1.0.0"
+host: localhost:8080
+# basePath prefixes all resource paths
+basePath: /
+#
+schemes:
+  # tip: remove http to make production-grade
+  - http
+  - https
+securityDefinitions:
+  BasicAuth:
+    type: basic
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+  - application/x-www-form-urlencoded
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+
+  /education-levels:
+    $ref: 'api/swagger/paths/educationLevels.yaml#/educationLevels'
+  /education-levels/{guid}:
+    $ref: 'api/swagger/paths/educationLevels.yaml#/educationLevels-guid'
+  /:
+    $ref: "api/swagger/paths/system.yaml#/app"
+
+definitions:
+  ErrorResponse:
+    $ref: "api/swagger/models/ErrorResponse.yaml"
+  EducationLevel:
+    $ref: "api/swagger/models/EducationLevel.yaml"
+  SingleArrayCodes:
+    $ref: "api/swagger/models/SingleArrayCodes.yaml"
+  SingleArrayGuids:
+    $ref: "api/swagger/models/SingleArrayGuids.yaml"
+  SingleArrayIds:
+    $ref: "api/swagger/models/SingleArrayIds.yaml"
+  SingleGuid:
+    $ref: "api/swagger/models/SingleGuid.yaml"
+

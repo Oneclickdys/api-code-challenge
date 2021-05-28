@@ -1,0 +1,10 @@
+#  required:
+#    - status
+#    - error
+ properties:
+   message:
+     type: string
+   status:
+     type: string
+   error:
+     type: object

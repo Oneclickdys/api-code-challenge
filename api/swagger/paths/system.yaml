@@ -1,0 +1,25 @@
+app:
+  x-swagger-router-controller: app
+  get:
+    description: Returns app info
+    operationId: get
+    responses:
+      "200":
+        description: Success
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+            data:
+              schema:
+                type: array
+      default:
+        description: Error
+        schema:
+          $ref: "#/definitions/ErrorResponse"
+shutdown: 
+  x-swagger-router-controller: app
+  get:
+    description: Shutdown app, for test only
+    operationId: shutDown

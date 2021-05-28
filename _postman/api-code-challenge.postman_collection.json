@@ -1,0 +1,219 @@
+{
+	"info": {
+		"_postman_id": "50966bb5-b6db-4a87-ac18-a9cff8e32652",
+		"name": "api-code-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "education-levels",
+			"item": [
+				{
+					"name": "education-levels?search=",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{jwt}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}education-levels?pageSize=10&offset=0",
+							"host": [
+								"{{host}}education-levels"
+							],
+							"query": [
+								{
+									"key": "pageSize",
+									"value": "10"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								},
+								{
+									"key": "search",
+									"value": "sec",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "education-levels",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{jwt}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"level\": \"111\",\n    \"code\": \"111\",\n    \"order\": 2\n}"
+						},
+						"url": {
+							"raw": "{{host}}education-levels",
+							"host": [
+								"{{host}}education-levels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "education-levels/{guid}",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{jwt}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}education-levels/8535b2c0-c266-4093-8b1b-ccfb652990de",
+							"host": [
+								"{{host}}education-levels"
+							],
+							"path": [
+								"8535b2c0-c266-4093-8b1b-ccfb652990de"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "sec",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "education-levels/{guid}",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{jwt}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"level\":\"444!\",\n\t\"code\": \"444\",\n    \"order\": 444\n}"
+						},
+						"url": {
+							"raw": "{{host}}education-levels/7acd7d79-9811-4bd6-9df7-7a5144c34428",
+							"host": [
+								"{{host}}education-levels"
+							],
+							"path": [
+								"7acd7d79-9811-4bd6-9df7-7a5144c34428"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "education-levels/{guid}",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "value",
+									"value": "{{jwt}}",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{host}}education-levels/7acd7d79-9811-4bd6-9df7-7a5144c34428",
+							"host": [
+								"{{host}}education-levels"
+							],
+							"path": [
+								"7acd7d79-9811-4bd6-9df7-7a5144c34428"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

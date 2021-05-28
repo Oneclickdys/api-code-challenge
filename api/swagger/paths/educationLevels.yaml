@@ -1,0 +1,147 @@
+educationLevels:
+  x-swagger-router-controller: educationLevels
+  get:
+    description: Returns education levels object
+    operationId: get
+    parameters:
+      - name: search
+        in: query
+        description: "Find by contract name"
+        required: false
+        type: string
+      - name: pageSize
+        in: query
+        description: Size of page, limit the number of results returned
+        required: false
+        type: string
+      - name: offset
+        in: query
+        description: It is used to specify the offset of the first row to be returned
+        required: false
+        type: string
+    responses:
+      "200":
+        description: Success
+        schema:
+          type: object
+          properties:
+            status:
+              type: string 
+            data:
+              schema:
+                type: array
+      default:
+        description: Error
+        schema:
+          $ref: "#/definitions/ErrorResponse"
+  post:
+    description: Create a new education level
+    operationId: post
+    security:
+      - BasicAuth: []
+    parameters:
+      - in: "body"
+        name: "body"
+        description: "Education Level"
+        required: true
+        schema: 
+          $ref: "#/definitions/EducationLevel"
+    responses:
+      "200":
+        description: Success creation education level
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+            data:
+              type: object
+              $ref: "#/definitions/EducationLevel"
+      default:
+        description: Error
+        schema:
+          $ref: "#/definitions/ErrorResponse"
+
+educationLevels-guid:
+  x-swagger-router-controller: educationLevels
+  get:
+    description: Get one education level
+    operationId: getOne
+    security:
+      - BasicAuth: []
+    parameters:
+      - name: "guid"
+        in: "path"
+        description: "Guid of school that needs get"
+        required: true
+        type: "string"
+    responses:
+      "200":
+        description: Success creation education level
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+            data:
+              type: object
+              $ref: "#/definitions/EducationLevel"
+      default:
+        description: Error
+        schema:
+          $ref: "#/definitions/ErrorResponse"
+  put:
+    description: Put a education level
+    operationId: put
+    security:
+      - BasicAuth: []
+    parameters:
+      - name: "guid"
+        in: "path"
+        description: "Guid of school that needs get"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Education Level"
+        required: true
+        schema: 
+          $ref: "#/definitions/EducationLevel"
+    responses:
+      "200":
+        description: Success creation education level
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+            data:
+              type: object
+              $ref: "#/definitions/EducationLevel"
+      default:
+        description: Error
+        schema:
+          $ref: "#/definitions/ErrorResponse"
+  delete:
+    description: Delete an education level
+    operationId: delete
+    security:
+      - BasicAuth: []
+    parameters:
+      - name: "guid"
+        in: "path"
+        description: "Guid of school that needs get"
+        required: true
+        type: "string"
+    responses:
+      "200":
+        description: Success creation education level
+        schema:
+          type: object
+          properties:
+            status:
+              type: string
+      default:
+        description: Error
+        schema:
+          $ref: "#/definitions/ErrorResponse"
